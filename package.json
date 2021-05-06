@@ -7,12 +7,18 @@
     "dev": "nodemon"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.16",
     "axios": "^0.21.1",
     "dotenv": "^9.0.0",
+    "graphql": "^15.5.0",
+    "react-dom": "^17.0.2",
+    "redux": "^4.1.0",
+    "styled-components": "^5.3.0",
     "twemoji": "^13.0.2",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
     "@types/axios": "^0.14.0",
     "@types/node": "^15.0.2",
     "@types/twitter": "^1.7.0",
