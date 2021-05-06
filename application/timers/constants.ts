@@ -1,0 +1,3 @@
+export enum RunnerType {
+  UPDATE_COINMARKETCAP_DATA = "@runners/UPDATE_COINMARKETCAP_DATA",
+}
