@@ -7,12 +7,17 @@
     "dev": "nodemon"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.16",
-    "axios": "^0.21.1",
+    "@types/reselect": "^2.2.0",
+    "cross-fetch": "^3.1.4",
     "dotenv": "^9.0.0",
+    "got": "^11.8.2",
     "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "redux": "^4.1.0",
+    "reselect": "^4.0.0",
     "styled-components": "^5.3.0",
     "twemoji": "^13.0.2",
     "twitter": "^1.7.1"
@@ -20,11 +25,13 @@
   "devDependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@types/axios": "^0.14.0",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^15.0.2",
     "@types/twitter": "^1.7.0",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
+    "typesafe-actions": "^5.1.0",
     "typescript": "^4.2.4"
   }
 }
