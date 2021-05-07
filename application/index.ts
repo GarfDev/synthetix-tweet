@@ -5,6 +5,7 @@ import { RunnerType } from "timers/constants";
 // Runners
 import coinmarketcapUpdater from "timers/runners/coinmarketcapUpdater";
 import synthExchangesUpdater from "timers/runners/synthExchangesUpdater";
+import exchangeUSDTallyUpdater from "timers/runners/exchangeUSDTallyUpdater";
 
 const application = () => {
   const logger = getLogger();
@@ -20,6 +21,12 @@ const application = () => {
     synthExchangesUpdater,
     30000
   );
+  timerManager.setter(
+    RunnerType.USDT_DAILY_UPDATER,
+    exchangeUSDTallyUpdater,
+    30000
+  );
+
   logger.info("Registed Runners..");
   twitter.getClient();
 };

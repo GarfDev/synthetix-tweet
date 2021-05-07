@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import htmlToImage from "node-html-to-image";
 import { getLogger } from "../utils/logger";
+import DailyReport from "./DailyReport";
 
 const HTML = (content: string, style: string) => {
   return `<html><head>${style}</head><body>${content}</body></html>`;
@@ -17,6 +18,7 @@ const renderer = async (template: React.ReactNode) => {
     const styleTags = sheet.getStyleTags(); // or sheet.getStyleElement();
 
     const buffer = await htmlToImage({
+      output: "./image.png",
       html: HTML(html, styleTags),
     });
     return buffer;
@@ -27,3 +29,5 @@ const renderer = async (template: React.ReactNode) => {
 };
 
 export default renderer;
+
+renderer(<DailyReport />);
