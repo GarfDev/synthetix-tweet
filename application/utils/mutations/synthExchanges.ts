@@ -1,7 +1,6 @@
 import { gql } from "graphql-request";
 
 const synthExchanges = (timestamp: number) => {
-  console.log(timestamp);
   return gql`
   {
     synthExchanges(
