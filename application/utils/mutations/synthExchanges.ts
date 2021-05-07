@@ -37,17 +37,17 @@ export default synthExchanges;
 
 export interface SynthExchange {
   block: string;
-  feesInUSD: string;
+  feesInUSD: number;
   from: string;
   fromAmount: string;
-  fromAmountInUSD: string;
+  fromAmountInUSD: number;
   fromCurrencyKey: string;
   gasPrice: string;
   id: string;
   timestamp: string;
   toAddress: string;
   toAmount: string;
-  toAmountInUSD: string;
+  toAmountInUSD: number;
   toCurrencyKey: string;
 }
 

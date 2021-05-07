@@ -10,7 +10,7 @@ async function coinmarketcapUpdater() {
   const dispatch = useDispatch();
   const data = await coinmarketcap.update();
   dispatch(updateCoinmarketcapData(data.data["SNX"]));
-  logger.info("Updated coinmarketcap data.");
+  logger.info("Updated Coinmarket Data.");
   timerManager.setter(
     RunnerType.UPDATE_COINMARKETCAP_DATA,
     coinmarketcapUpdater,

@@ -10,6 +10,7 @@ import synthExchanges, {
   SynthExchangesResponse,
 } from "utils/mutations/synthExchanges";
 import { RunnerType } from "timers/constants";
+import { formatUSD } from "utils";
 
 async function synthExchangesUpdater() {
   const logger = getLogger();
@@ -19,10 +20,19 @@ async function synthExchangesUpdater() {
     GRAPHQL_ENDPOINT.EXCHANGES,
     synthExchanges(yesterday)
   );
-  dispatch(updateSynthExchanges(response.synthExchanges));
+  dispatch(
+    updateSynthExchanges(
+      response.synthExchanges.map((item) => ({
+        ...item,
+        feesInUSD: formatUSD(item.feesInUSD),
+        fromAmountInUSD: formatUSD(item.fromAmountInUSD),
+        toAmountInUSD: formatUSD(item.toAmountInUSD),
+      }))
+    )
+  );
   logger.info("Updated Synth Exchanges.");
   timerManager.setter(
-    RunnerType.UPDATE_COINMARKETCAP_DATA,
+    RunnerType.UPDATE_SYNTH_EXCHANGES,
     synthExchangesUpdater,
     30000
   );

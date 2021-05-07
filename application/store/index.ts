@@ -1,11 +1,9 @@
 import { createStore } from "redux";
+import { patternHandler } from "patterns";
 import rootReducer from "./reducer";
 
 const store = createStore(rootReducer);
 
-// store.subscribe(() => {
-//   const state = useSelector(rootSelector);
-//   console.log(state);
-// });
+store.subscribe(patternHandler);
 
 export default store;
